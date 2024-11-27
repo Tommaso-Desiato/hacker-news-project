@@ -10,7 +10,11 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getNews(): Observable<any> {
+  getNews(): Observable<number[]> {
     return this.http.get<any>(`${this.baseUrl}newstories.json`)
+  }
+
+  getNewsData(newsId: number): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}item/${newsId}.json`)
   }
 }

@@ -1,1 +1,5 @@
-<p>home works!</p>
+<div *ngFor="let data of newsData">
+  <h1>{{ data.title }}</h1>
+  <h2>{{ data.time | date : "short" }}</h2>
+  <p>{{ data.url }}</p>
+</div>
