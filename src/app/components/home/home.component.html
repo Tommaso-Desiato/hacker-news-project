@@ -1,9 +1,23 @@
-<div *ngFor="let data of newsData">
-  <h1>{{ data.title }}</h1>
-  <h2>{{ data.time * 1000 | date : "medium" }}</h2>
-  <p>{{ data.url }}</p>
-</div>
+<header class="text-center mb-2 bg-violet-900 text-amber-500">
+  <h1>Hacker News</h1>
+</header>
 
-<button (click)="loadNews()" *ngIf="currentIndex < newsId.length">
-  Load More
-</button>
+<div class="grid md:grid-cols-2 gap-2">
+  <mat-card appearance="outlined" *ngFor="let data of newsData">
+    <mat-card-header>
+      <mat-card-title> {{ data.title }} </mat-card-title>
+      <mat-card-subtitle>
+        {{ data.time * 1000 | date : "medium" }}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions class="mx-auto">
+      <a [href]="data.url" target="_blank">
+        <button mat-button>Read More</button>
+      </a>
+    </mat-card-actions>
+  </mat-card>
+
+  <button mat-button (click)="loadNews()" *ngIf="currentIndex < newsId.length">
+    Load More
+  </button>
+</div>
