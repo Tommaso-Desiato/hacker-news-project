@@ -2,7 +2,7 @@
   <h1>Hacker News</h1>
 </header>
 
-<div class="grid md:grid-cols-2 gap-2">
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-2 drop-shadow-lg">
   <mat-card appearance="outlined" *ngFor="let data of newsData">
     <mat-card-header>
       <mat-card-title> {{ data.title }} </mat-card-title>
@@ -11,12 +11,12 @@
       </mat-card-subtitle>
     </mat-card-header>
     <mat-card-actions class="mx-auto">
-      <a [href]="data.url" target="_blank">
-        <button mat-button>Read More</button>
-      </a>
+      <a mat-button [href]="data.url" target="_blank"> Read More </a>
     </mat-card-actions>
   </mat-card>
+</div>
 
+<div class="flex justify-center mt-4">
   <button mat-button (click)="loadNews()" *ngIf="currentIndex < newsId.length">
     Load More
   </button>

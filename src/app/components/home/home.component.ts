@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit{
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
+
     this.apiService.getNews().subscribe(res => {
       for (let i = 0; i < res.length; i++) {
         this.newsId.push(res[i]) ;
