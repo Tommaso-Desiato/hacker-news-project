@@ -1,8 +1,8 @@
-<header class="text-center mb-2 bg-violet-900 text-amber-500">
-  <h1>Hacker News</h1>
+<header class="text-center mb-2 bg-gray-950 text-green-600">
+  <h1 class="p-2">Hacker News</h1>
 </header>
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-2 drop-shadow-lg">
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-2 mx-2 drop-shadow-lg">
   <mat-card appearance="outlined" *ngFor="let data of newsData">
     <mat-card-header>
       <mat-card-title> {{ data.title }} </mat-card-title>
@@ -21,3 +21,5 @@
     Load More
   </button>
 </div>
+
+<app-scroll-to-top></app-scroll-to-top>

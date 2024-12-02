@@ -3,11 +3,12 @@ import { ApiService } from '../../services/api.service';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { ScrollToTopComponent } from "../scroll-to-top/scroll-to-top.component";
 
 @Component({
     standalone: true,
     selector: 'app-home',
-    imports: [CommonModule, MatCardModule, MatButtonModule],
+    imports: [CommonModule, MatCardModule, MatButtonModule, ScrollToTopComponent],
     templateUrl: './home.component.html',
     styleUrl: './home.component.css'
 })
