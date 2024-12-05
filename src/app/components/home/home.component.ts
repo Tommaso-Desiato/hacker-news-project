@@ -20,7 +20,6 @@ export class HomeComponent implements OnInit{
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-
     this.apiService.getNews().subscribe(res => {
       for (let i = 0; i < res.length; i++) {
         this.newsId.push(res[i]) ;
@@ -37,6 +36,5 @@ export class HomeComponent implements OnInit{
       });
     });
     this.currentIndex += 10;
-    console.log(this.newsData)
   }
 }
